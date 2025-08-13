@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 import pytz
 import time
 import threading
-from flask import Flask
+from flask import Flask, jsonify
 
 # --- Google Sheets setup ---
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -103,8 +103,17 @@ def home():
 def healthz():
     return "OK"
 
+@app.route("/update/<branch>", methods=["POST"])
+def update_branch(branch):
+    try:
+        rows = fetch_data_from_mongo(branch)
+        write_to_sheet(branch, rows)
+        return jsonify({"status": "success", "rows_updated": len(rows)})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
 if __name__ == "__main__":
-    # Start sync loop in a background thread
+    # Keep background sync if you need it
     threading.Thread(target=sync_loop, daemon=True).start()
 
     # Run Flask app on Render's port
