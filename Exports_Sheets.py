@@ -33,10 +33,10 @@ mongo_uri = os.environ.get(
 mongo_client = MongoClient(mongo_uri)
 db = mongo_client['test']
 
-branch_collections = {
+bbranch_collections = {
     "E-Commerce_website_Leads": "E-Commerce_website_Leads",
     "Static_Leads": "Static_Leads",
-    "Digital Marketing": "Digital_Marketing_4999",  # <-- new branch added
+    "Digital_Marketing_4999": "Digital_Marketing_4999",
     "Unknown_Leads": "Unknown_Leads"
 }
 
