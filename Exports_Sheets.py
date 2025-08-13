@@ -87,7 +87,7 @@ def sync_loop():
                 print(f"Error processing collection '{collection_name}': {e}")
 
         print("Sync complete! Waiting 5 minutes before next sync...")
-        time.sleep(300)  # sleep 5 minutes
+        time.sleep(60)  # sleep 1 minutes
 
 # --- Flask web server ---
 app = Flask(__name__)
