@@ -37,8 +37,10 @@ branch_collections = {
     "E-Commerce_website_Leads": "E-Commerce_website_Leads",
     "Static_Leads": "Static_Leads",
     "Digital_Marketing_4999": "Digital_Marketing_4999",
+    "FSD_9999": "FSD_9999",   # ✅ Added new branch
     "Unknown_Leads": "Unknown_Leads"
 }
+
 
 
 def fetch_data_from_mongo(collection_name):
