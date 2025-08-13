@@ -33,7 +33,7 @@ mongo_uri = os.environ.get(
 mongo_client = MongoClient(mongo_uri)
 db = mongo_client['test']
 
-bbranch_collections = {
+branch_collections = {
     "E-Commerce_website_Leads": "E-Commerce_website_Leads",
     "Static_Leads": "Static_Leads",
     "Digital_Marketing_4999": "Digital_Marketing_4999",
