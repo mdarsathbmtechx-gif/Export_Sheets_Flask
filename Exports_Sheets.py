@@ -34,7 +34,7 @@ mongo_client = MongoClient(mongo_uri)
 db = mongo_client['test']
 
 branch_collections = {
-    "E-Commerce_website_Leads": "E-Commerce_website_Leads",
+    # "E-Commerce_website_Leads": "E-Commerce_website_Leads",
     "Static_Leads": "Static_Leads",
     "Digital_Marketing_4999": "Digital_Marketing_4999",
     "FSD_9999": "FSD_9999",   # ✅ Added new branch
